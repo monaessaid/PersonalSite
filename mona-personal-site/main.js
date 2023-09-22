@@ -1,7 +1,5 @@
 import './style.css'
-
 import * as THREE from 'three';
-
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const scene = new THREE.Scene();
@@ -19,10 +17,10 @@ camera.position.setZ(30);
 renderer.render(scene, camera);
 
 const geometry = new THREE.TorusGeometry(10, 0.2, 16, 50);
-const geometry3 = new THREE.BoxGeometry(5, 5, 5);
+// const geometry3 = new THREE.BoxGeometry(5, 5, 5);
 const geometry2 = new THREE.SphereGeometry(4, 16, 32);
 
-const material = new THREE.MeshStandardMaterial({ color: "0xFFFF00" });
+// const material = new THREE.MeshStandardMaterial({ color: "0xFFFF00" });
 const material2 = new THREE.MeshNormalMaterial();
 // const material3 = new THREE.MeshNormalMaterial({wireframe: true});
 // const material3 = new THREE.MeshNormalMaterial({ color: "green", wireframe: true });
@@ -45,16 +43,16 @@ scene.add(sphere);
 
 // cube.position.x = 20;
 
-const pointLight = new THREE.PointLight('white', 1, 100);
-pointLight.position.set(20, 20, 20);
-scene.add(pointLight);
+// const pointLight = new THREE.PointLight('white', 1, 100);
+// pointLight.position.set(20, 20, 20);
+// scene.add(pointLight);
 
-const ambientLight = new THREE.AmbientLight(0xe68cff);
-scene.add(ambientLight);
+// const ambientLight = new THREE.AmbientLight(0xe68cff);
+// scene.add(ambientLight);
 
-const sphereSize = 1;
-const pointLightHelper = new THREE.PointLightHelper(pointLight, sphereSize);
-scene.add(pointLightHelper);
+// const sphereSize = 1;
+// const pointLightHelper = new THREE.PointLightHelper(pointLight, sphereSize);
+// scene.add(pointLightHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -110,6 +108,9 @@ scene.background = spaceTexture;
 
 const planetTexture1 = new THREE.TextureLoader().load('planet-texture1.jpg');
 const planetTexture2 = new THREE.TextureLoader().load('planet-texture2.jpg');
+const planetTexture3 = new THREE.TextureLoader().load('planet-texture3.jpg');
+const planetTexture4 = new THREE.TextureLoader().load('planet-texture5.jpg');
+const planetTexture5 = new THREE.TextureLoader().load('planet-texture4.jpg');
 
 const texturedPlanet1 = new THREE.Mesh (
     new THREE.SphereGeometry(15,32,16),
@@ -121,6 +122,21 @@ const texturedPlanet2 = new THREE.Mesh (
     new THREE.MeshBasicMaterial( {map: planetTexture2} )
 );
 
+const texturedPlanet3 = new THREE.Mesh (
+    new THREE.SphereGeometry(5,32,16),
+    new THREE.MeshBasicMaterial( {map: planetTexture3} )
+);
+
+const texturedPlanet4 = new THREE.Mesh (
+    new THREE.SphereGeometry(5,32,16),
+    new THREE.MeshBasicMaterial( {map: planetTexture4} )
+);
+
+const texturedPlanet5 = new THREE.Mesh (
+    new THREE.SphereGeometry(3,32,16),
+    new THREE.MeshBasicMaterial( {map: planetTexture5} )
+);
+
 scene.add(texturedPlanet1);
 texturedPlanet1.position.x = 25;
 texturedPlanet1.position.y = 25;
@@ -129,6 +145,21 @@ scene.add(texturedPlanet2);
 texturedPlanet2.position.x = -25;
 texturedPlanet2.position.y = -25;
 texturedPlanet2.position.z =-25;
+
+scene.add(texturedPlanet3);
+texturedPlanet3.position.x = 28;
+texturedPlanet3.position.y = 28;
+texturedPlanet3.position.z = 28;
+
+scene.add(texturedPlanet4);
+texturedPlanet4.position.x = -10;
+texturedPlanet4.position.y = -10;
+texturedPlanet4.position.z =-10;
+
+scene.add(texturedPlanet5);
+texturedPlanet5.position.x = -5;
+texturedPlanet5.position.y = 15;
+texturedPlanet5.position.z =-5;
 
 function animate() {
     requestAnimationFrame(animate);
@@ -139,6 +170,15 @@ function animate() {
     texturedPlanet1.rotation.y += 0.01;
 
     texturedPlanet2.rotation.y += 0.02;
+
+    texturedPlanet3.rotation.x += 0.01;
+    texturedPlanet3.rotation.z += 0.01;
+
+    texturedPlanet4.rotation.x += 0.02;
+    texturedPlanet4.rotation.z += 0.02;
+
+    texturedPlanet5.rotation.x += 0.005;
+    texturedPlanet5.rotation.y += 0.005;
 
     // sphere.rotation.x += 0.01;
     // sphere.rotation.y += 0.005;
