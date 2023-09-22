@@ -2,6 +2,8 @@ import './style.css'
 
 import * as THREE from 'three';
 
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -50,11 +52,30 @@ scene.add(ambientLight);
 // const pointLightHelper = new THREE.PointLightHelper(pointLight, sphereSize);
 // scene.add (pointLightHelper);
 
+const controls = new OrbitControls(camera, renderer.domElement);
+
+function addStar() {
+
+    const a = Math.random() * (0.5 - 0.01) + 0.01;
+
+    const geometry = new THREE.SphereGeometry(a, 24, 24);
+    const material = new THREE.MeshBasicMaterial( {color: "white"} );
+    const star = new THREE.Mesh(geometry,material);
+
+    const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread( 100 ));
+
+    star.position.set(x,y,z);
+    scene.add(star);
+}
+
+Array(200).fill().forEach(addStar);
+
 function animate() {
     requestAnimationFrame(animate);
     torus.rotation.x += 0.01;
     torus.rotation.y += 0.005;
     torus.rotation.z += 0.01;
+
     // sphere.rotation.x += 0.05;
     // sphere.rotation.y += 0.05;
     // sphere.rotation.z += 0.05;
@@ -63,6 +84,9 @@ function animate() {
     // torus3.rotation.y += 0.05;
     // cube.rotation.x += 0.05;
     // cube.rotation.y += 0.05;
+
+    controls.update();
+
     renderer.render(scene, camera);
 }
 
