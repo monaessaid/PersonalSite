@@ -211,9 +211,9 @@ function moveCamera() {
     const t = document.body.getBoundingClientRect().top;
     sun.rotation.x += 0.5;
 
-    camera.position.z = t * - 0.001;
-    camera.position.x = t * - 0.01;
-    camera.position.y = t * - 0.01;
+    camera.position.z = t * -0.02;
+    camera.position.x = t * 0.01;
+    camera.position.y = t * -0.01;
 }
 
 document.body.onscroll = moveCamera;
