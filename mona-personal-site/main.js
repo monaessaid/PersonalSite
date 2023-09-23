@@ -27,13 +27,13 @@ const material2 = new THREE.MeshNormalMaterial();
 
 const torus = new THREE.Mesh(geometry, material2);
 // const torus4 = new THREE.Mesh(geometry, material3);
-const sphere = new THREE.Mesh(geometry2, material2);
+// const sphere = new THREE.Mesh(geometry2, material2);
 // const torus2 = new THREE.Mesh(geometry, material2);
 // const torus3 = new THREE.Mesh(geometry, material3);
 // const cube = new THREE.Mesh(geometry3, material);
 
-scene.add(torus);
-scene.add(sphere);
+// scene.add(torus);
+// scene.add(sphere);
 // scene.add(cube);
 // scene.add(sphere);
 // scene.add(torus4);
@@ -111,30 +111,42 @@ const planetTexture2 = new THREE.TextureLoader().load('planet-texture2.jpg');
 const planetTexture3 = new THREE.TextureLoader().load('planet-texture3.jpg');
 const planetTexture4 = new THREE.TextureLoader().load('planet-texture5.jpg');
 const planetTexture5 = new THREE.TextureLoader().load('planet-texture4.jpg');
+const planetTexture6 = new THREE.TextureLoader().load('planet-texture6.jpg');
+const sunTexture = new THREE.TextureLoader().load('sun-texture.jpg');
 
-const texturedPlanet1 = new THREE.Mesh (
-    new THREE.SphereGeometry(15,32,16),
-    new THREE.MeshBasicMaterial( {map: planetTexture1} )
+const texturedPlanet1 = new THREE.Mesh(
+    new THREE.SphereGeometry(15, 32, 16),
+    new THREE.MeshBasicMaterial({ map: planetTexture1 })
 );
 
-const texturedPlanet2 = new THREE.Mesh (
-    new THREE.SphereGeometry(10,32,16),
-    new THREE.MeshBasicMaterial( {map: planetTexture2} )
+const texturedPlanet2 = new THREE.Mesh(
+    new THREE.SphereGeometry(10, 32, 16),
+    new THREE.MeshBasicMaterial({ map: planetTexture2 })
 );
 
-const texturedPlanet3 = new THREE.Mesh (
-    new THREE.SphereGeometry(5,32,16),
-    new THREE.MeshBasicMaterial( {map: planetTexture3} )
+const texturedPlanet3 = new THREE.Mesh(
+    new THREE.SphereGeometry(5, 32, 16),
+    new THREE.MeshBasicMaterial({ map: planetTexture3 })
 );
 
-const texturedPlanet4 = new THREE.Mesh (
-    new THREE.SphereGeometry(5,32,16),
-    new THREE.MeshBasicMaterial( {map: planetTexture4} )
+const texturedPlanet4 = new THREE.Mesh(
+    new THREE.SphereGeometry(5, 32, 16),
+    new THREE.MeshBasicMaterial({ map: planetTexture4 })
 );
 
-const texturedPlanet5 = new THREE.Mesh (
-    new THREE.SphereGeometry(3,32,16),
-    new THREE.MeshBasicMaterial( {map: planetTexture5} )
+const texturedPlanet5 = new THREE.Mesh(
+    new THREE.SphereGeometry(3, 32, 16),
+    new THREE.MeshBasicMaterial({ map: planetTexture5 })
+);
+
+const texturedPlanet6 = new THREE.Mesh(
+    new THREE.SphereGeometry(6, 32, 16),
+    new THREE.MeshBasicMaterial({ map: planetTexture6 })
+);
+
+const sun = new THREE.Mesh(
+    new THREE.SphereGeometry(10, 32, 16),
+    new THREE.MeshBasicMaterial({ map: sunTexture })
 );
 
 scene.add(texturedPlanet1);
@@ -144,7 +156,7 @@ texturedPlanet1.position.y = 25;
 scene.add(texturedPlanet2);
 texturedPlanet2.position.x = -25;
 texturedPlanet2.position.y = -25;
-texturedPlanet2.position.z =-25;
+texturedPlanet2.position.z = -25;
 
 scene.add(texturedPlanet3);
 texturedPlanet3.position.x = 28;
@@ -154,12 +166,19 @@ texturedPlanet3.position.z = 28;
 scene.add(texturedPlanet4);
 texturedPlanet4.position.x = -10;
 texturedPlanet4.position.y = -10;
-texturedPlanet4.position.z =-10;
+texturedPlanet4.position.z = -10;
 
 scene.add(texturedPlanet5);
 texturedPlanet5.position.x = -5;
 texturedPlanet5.position.y = 15;
-texturedPlanet5.position.z =-5;
+texturedPlanet5.position.z = -5;
+
+scene.add(texturedPlanet6);
+texturedPlanet6.position.x = -10;
+texturedPlanet6.position.y = 28;
+texturedPlanet6.position.z = -10;
+
+scene.add(sun);
 
 function animate() {
     requestAnimationFrame(animate);
@@ -179,6 +198,14 @@ function animate() {
 
     texturedPlanet5.rotation.x += 0.005;
     texturedPlanet5.rotation.y += 0.005;
+
+    texturedPlanet6.rotation.x += 0.02;
+    texturedPlanet6.rotation.z += 0.02;
+
+
+    sun.rotation.x += 0.01;
+    sun.rotation.y += 0.01;
+    sun.rotation.z += 0.01;
 
     // sphere.rotation.x += 0.01;
     // sphere.rotation.y += 0.005;
