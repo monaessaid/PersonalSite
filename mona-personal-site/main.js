@@ -12,47 +12,27 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
+camera.position.setZ(60);
 
 renderer.render(scene, camera);
 
-const geometry = new THREE.TorusGeometry(10, 0.2, 16, 50);
-// const geometry3 = new THREE.BoxGeometry(5, 5, 5);
-// const geometry2 = new THREE.SphereGeometry(4, 16, 32);
+const pointLight = new THREE.PointLight('white', 1, 100);
+pointLight.position.set(20, 20, 20);
+scene.add(pointLight);
 
-// const material = new THREE.MeshStandardMaterial({ color: "0xFFFF00" });
-const material2 = new THREE.MeshNormalMaterial();
-// const material3 = new THREE.MeshNormalMaterial({wireframe: true});
-// const material3 = new THREE.MeshNormalMaterial({ color: "green", wireframe: true });
+const directionalLight = new THREE.DirectionalLight(
+    0xffffff, 0.5
+);
+directionalLight.castShadow;
+scene.add(directionalLight);
 
-const torus = new THREE.Mesh(geometry, material2);
-// const torus4 = new THREE.Mesh(geometry, material3);
-// const sphere = new THREE.Mesh(geometry2, material2);
-// const torus2 = new THREE.Mesh(geometry, material2);
-// const torus3 = new THREE.Mesh(geometry, material3);
-// const cube = new THREE.Mesh(geometry3, material);
+const pointLight2 = new THREE.PointLight(0xffffff);
+pointLight.position.set(-5, -5, -5);
+// pointLight.position.set(x,y,z);
+scene.add(pointLight2);
 
-// scene.add(torus);
-// scene.add(sphere);
-// scene.add(cube);
-// scene.add(sphere);
-// scene.add(torus4);
-// scene.add(torus2);
-// scene.add(torus3);
-// scene.add(cube);
-
-// cube.position.x = 20;
-
-// const pointLight = new THREE.PointLight('white', 1, 100);
-// pointLight.position.set(20, 20, 20);
-// scene.add(pointLight);
-
-// const ambientLight = new THREE.AmbientLight(0xe68cff);
-// scene.add(ambientLight);
-
-// const sphereSize = 1;
-// const pointLightHelper = new THREE.PointLightHelper(pointLight, sphereSize);
-// scene.add(pointLightHelper);
+const ambientLight = new THREE.AmbientLight(0xe68cff);
+scene.add(ambientLight);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -64,18 +44,15 @@ function addStar() {
     const a = Math.random() * (0.5 - 0.01) + 0.01;
 
     const geometry = new THREE.SphereGeometry(a, 24, 24);
-    // const material = new THREE.MeshNormalMaterial();
-    // const material = new THREE.MeshLambertMaterial(
-    //     { color: 0xab66ff }
-    // );
     const material = new THREE.MeshLambertMaterial(
         {
-            color: 0x8affff,
+            // color: 0x8affff,
+            color: 0xffffff,
             roughness: 0.0,
-            metalness: 1,
-            reflectivity: 1,
+            metalness: 1.0,
+            reflectivity: 1.0,
             clearcoat: 1.0,
-            clearcoatRoughness: 0.1,
+            // clearcoatRoughness: 0.1,
         }
     );
 
@@ -86,17 +63,6 @@ function addStar() {
     // pointLight.position.set(x,y,z);
     scene.add(pointLight);
 
-    // const pointLight2 = new THREE.PointLight(0xffffff);
-    // pointLight.position.set(-5, -5, -5);
-    // // pointLight.position.set(x,y,z);
-    // scene.add(pointLight2);
-
-    // const directionalLight = new THREE.DirectionalLight(
-    //     0xffffff, 0.5
-    // );
-    // directionalLight.castShadow;
-    // scene.add(directionalLight);
-
     const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
 
     star.position.set(x, y, z);
@@ -104,15 +70,6 @@ function addStar() {
 }
 
 Array(200).fill().forEach(addStar);
-
-// let letters = "0123456789ABCDEF";
-// let randomColor = '0x';
-
-// for (let i = 0; i < 6; i++) {
-//     randomColor += letters[(Math.floor(Math.random() * 16))];
-// }
-
-// console.log(color);
 
 function addPlanet() {
     const a = Math.random() * (3 - 1) + 1;
@@ -219,9 +176,6 @@ scene.add(sun);
 
 function animate() {
     requestAnimationFrame(animate);
-    torus.rotation.x += 0.01;
-    torus.rotation.y += 0.005;
-    // torus.rotation.z += 0.01;
 
     texturedPlanet1.rotation.y += 0.01;
 
