@@ -18,7 +18,7 @@ renderer.render(scene, camera);
 
 const geometry = new THREE.TorusGeometry(10, 0.2, 16, 50);
 // const geometry3 = new THREE.BoxGeometry(5, 5, 5);
-const geometry2 = new THREE.SphereGeometry(4, 16, 32);
+// const geometry2 = new THREE.SphereGeometry(4, 16, 32);
 
 // const material = new THREE.MeshStandardMaterial({ color: "0xFFFF00" });
 const material2 = new THREE.MeshNormalMaterial();
@@ -43,26 +43,46 @@ const torus = new THREE.Mesh(geometry, material2);
 
 // cube.position.x = 20;
 
-const pointLight = new THREE.PointLight('white', 1, 100);
-pointLight.position.set(20, 20, 20);
-scene.add(pointLight);
+// const pointLight = new THREE.PointLight('white', 1, 100);
+// pointLight.position.set(20, 20, 20);
+// scene.add(pointLight);
 
-const ambientLight = new THREE.AmbientLight(0xe68cff);
-scene.add(ambientLight);
+// const ambientLight = new THREE.AmbientLight(0xe68cff);
+// scene.add(ambientLight);
 
-const sphereSize = 1;
-const pointLightHelper = new THREE.PointLightHelper(pointLight, sphereSize);
-scene.add(pointLightHelper);
+// const sphereSize = 1;
+// const pointLightHelper = new THREE.PointLightHelper(pointLight, sphereSize);
+// scene.add(pointLightHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
+
+const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
+scene.add(light);
 
 function addStar() {
 
     const a = Math.random() * (0.5 - 0.01) + 0.01;
 
     const geometry = new THREE.SphereGeometry(a, 24, 24);
-    const material = new THREE.MeshNormalMaterial();
+    // const material = new THREE.MeshNormalMaterial();
+    const material = new THREE.MeshLambertMaterial(
+        { color: 0xab66ff }
+    );
     const star = new THREE.Mesh(geometry, material);
+
+    const pointLight = new THREE.PointLight(0xffffff);
+    pointLight.position.set(20, 20, 20);
+    // pointLight.position.set(x,y,z);
+    scene.add(pointLight);
+
+    // const ambientLight = new THREE.AmbientLight(0xffffff);
+    // scene.add(pointLight, ambientLight);
+
+    // const directionalLight = new THREE.DirectionalLight(
+    //     0xffffff, 0.5
+    // );
+    // directionalLight.castShadow;
+    // scene.add(directionalLight);
 
     const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
 
@@ -82,7 +102,7 @@ Array(200).fill().forEach(addStar);
 // console.log(color);
 
 function addPlanet() {
-    const a = Math.random() * (1 - 0.8) + 0.8;
+    const a = Math.random() * (1 - 0.5) + 0.5;
     const geometry = new THREE.SphereGeometry(a, 24, 24);
 
     // let letters = "0123456789abcdef";
@@ -90,7 +110,6 @@ function addPlanet() {
 
     // for (let i = 0; i < 6; i++) {
     //     randomColor += letters[(Math.floor(Math.random() * 16))];
-    // }
 
     const material = new THREE.MeshNormalMaterial({ flatShading: true });
     const planet = new THREE.Mesh(geometry, material);
