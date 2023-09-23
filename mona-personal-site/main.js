@@ -213,7 +213,7 @@ function animate() {
 
     // sphere.rotation.x += 0.05;
     // sphere.rotation.y += 0.05;
-    // sphere.rotation.z += 0.05;
+    // sphere.rotation.z += 0.0;
     // torus4.rotation.x +=0.05;
     // torus2.rotation.x += 0.05;
     // torus3.rotation.y += 0.05;
