@@ -12,7 +12,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(60);
+camera.position.setZ(10);
 
 renderer.render(scene, camera);
 
@@ -206,5 +206,16 @@ function animate() {
 
     renderer.render(scene, camera);
 }
+
+function moveCamera() {
+    const t = document.body.getBoundingClientRect().top;
+    sun.rotation.x += 0.5;
+
+    camera.position.z = t * - 0.001;
+    camera.position.x = t * - 0.01;
+    camera.position.y = t * - 0.01;
+}
+
+document.body.onscroll = moveCamera;
 
 animate();

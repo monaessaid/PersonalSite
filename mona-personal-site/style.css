@@ -6,11 +6,19 @@ canvas {
 
 main {
     position: absolute;
+    color: white;
+    font-family: monospace;
 }
 
 h1 {
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
+    /* font-family: monospace; */
+    font-size: 3.5rem;
     text-align: center;
+}
+
+p {
+    margin: 10%;
+    background-color: rgba(0, 0, 59, 0.794);
 }
