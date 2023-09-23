@@ -43,16 +43,16 @@ const torus = new THREE.Mesh(geometry, material2);
 
 // cube.position.x = 20;
 
-// const pointLight = new THREE.PointLight('white', 1, 100);
-// pointLight.position.set(20, 20, 20);
-// scene.add(pointLight);
+const pointLight = new THREE.PointLight('white', 1, 100);
+pointLight.position.set(20, 20, 20);
+scene.add(pointLight);
 
-// const ambientLight = new THREE.AmbientLight(0xe68cff);
-// scene.add(ambientLight);
+const ambientLight = new THREE.AmbientLight(0xe68cff);
+scene.add(ambientLight);
 
-// const sphereSize = 1;
-// const pointLightHelper = new THREE.PointLightHelper(pointLight, sphereSize);
-// scene.add(pointLightHelper);
+const sphereSize = 1;
+const pointLightHelper = new THREE.PointLightHelper(pointLight, sphereSize);
+scene.add(pointLightHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -95,7 +95,7 @@ function addPlanet() {
     const material = new THREE.MeshNormalMaterial({ flatShading: true });
     const planet = new THREE.Mesh(geometry, material);
 
-    const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+    const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(500));
 
     planet.position.set(x, y, z);
     scene.add(planet);
@@ -111,7 +111,7 @@ const planetTexture2 = new THREE.TextureLoader().load('planet-texture2.jpg');
 const planetTexture3 = new THREE.TextureLoader().load('planet-texture3.jpg');
 const planetTexture4 = new THREE.TextureLoader().load('planet-texture5.jpg');
 const planetTexture5 = new THREE.TextureLoader().load('planet-texture4.jpg');
-const planetTexture6 = new THREE.TextureLoader().load('planet-texture8.jpg');
+const planetTexture6 = new THREE.TextureLoader().load('planet-texture9.jpg');
 const sunTexture = new THREE.TextureLoader().load('sun-texture.jpg');
 
 const texturedPlanet1 = new THREE.Mesh(
