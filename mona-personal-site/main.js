@@ -110,8 +110,9 @@ const planetTexture1 = new THREE.TextureLoader().load('planet-texture1.jpg');
 const planetTexture2 = new THREE.TextureLoader().load('planet-texture2.jpg');
 const planetTexture3 = new THREE.TextureLoader().load('planet-texture3.jpg');
 const planetTexture4 = new THREE.TextureLoader().load('planet-texture5.jpg');
-const planetTexture5 = new THREE.TextureLoader().load('planet-texture4.jpg');
+const planetTexture5 = new THREE.TextureLoader().load('planet-texture11.jpg');
 const planetTexture6 = new THREE.TextureLoader().load('planet-texture9.jpg');
+const planetTexture7 = new THREE.TextureLoader().load('planet-texture6.jpg');
 const sunTexture = new THREE.TextureLoader().load('sun-texture.jpg');
 
 const texturedPlanet1 = new THREE.Mesh(
@@ -142,6 +143,11 @@ const texturedPlanet5 = new THREE.Mesh(
 const texturedPlanet6 = new THREE.Mesh(
     new THREE.SphereGeometry(6, 32, 16),
     new THREE.MeshBasicMaterial({ map: planetTexture6 })
+);
+
+const texturedPlanet7 = new THREE.Mesh(
+    new THREE.SphereGeometry(9, 32, 16),
+    new THREE.MeshBasicMaterial({ map: planetTexture7 })
 );
 
 const sun = new THREE.Mesh(
@@ -178,6 +184,11 @@ texturedPlanet6.position.x = -10;
 texturedPlanet6.position.y = 28;
 texturedPlanet6.position.z = -10;
 
+scene.add(texturedPlanet7);
+texturedPlanet7.position.x = -25;
+texturedPlanet7.position.y = 30;
+texturedPlanet7.position.z = -25;
+
 scene.add(sun);
 
 function animate() {
@@ -202,6 +213,8 @@ function animate() {
     texturedPlanet6.rotation.x += 0.02;
     texturedPlanet6.rotation.z += 0.02;
 
+    texturedPlanet7.rotation.y += 0.01;
+    texturedPlanet7.rotation.z += 0.01;
 
     sun.rotation.x += 0.01;
     sun.rotation.y += 0.01;
