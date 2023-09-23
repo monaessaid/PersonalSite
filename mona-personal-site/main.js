@@ -56,7 +56,7 @@ const torus = new THREE.Mesh(geometry, material2);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
-const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
+const light = new THREE.HemisphereLight(0xffffff, 0x080820, 1);
 scene.add(light);
 
 function addStar() {
@@ -65,9 +65,20 @@ function addStar() {
 
     const geometry = new THREE.SphereGeometry(a, 24, 24);
     // const material = new THREE.MeshNormalMaterial();
+    // const material = new THREE.MeshLambertMaterial(
+    //     { color: 0xab66ff }
+    // );
     const material = new THREE.MeshLambertMaterial(
-        { color: 0xab66ff }
+        {
+            color: 0x8affff,
+            roughness: 0.0,
+            metalness: 1,
+            reflectivity: 1,
+            clearcoat: 1.0,
+            clearcoatRoughness: 0.1,
+        }
     );
+
     const star = new THREE.Mesh(geometry, material);
 
     const pointLight = new THREE.PointLight(0xffffff);
@@ -75,8 +86,10 @@ function addStar() {
     // pointLight.position.set(x,y,z);
     scene.add(pointLight);
 
-    // const ambientLight = new THREE.AmbientLight(0xffffff);
-    // scene.add(pointLight, ambientLight);
+    // const pointLight2 = new THREE.PointLight(0xffffff);
+    // pointLight.position.set(-5, -5, -5);
+    // // pointLight.position.set(x,y,z);
+    // scene.add(pointLight2);
 
     // const directionalLight = new THREE.DirectionalLight(
     //     0xffffff, 0.5
@@ -102,14 +115,8 @@ Array(200).fill().forEach(addStar);
 // console.log(color);
 
 function addPlanet() {
-    const a = Math.random() * (1 - 0.5) + 0.5;
+    const a = Math.random() * (3 - 1) + 1;
     const geometry = new THREE.SphereGeometry(a, 24, 24);
-
-    // let letters = "0123456789abcdef";
-    // let randomColor = '0x';
-
-    // for (let i = 0; i < 6; i++) {
-    //     randomColor += letters[(Math.floor(Math.random() * 16))];
 
     const material = new THREE.MeshNormalMaterial({ flatShading: true });
     const planet = new THREE.Mesh(geometry, material);
@@ -239,18 +246,7 @@ function animate() {
     sun.rotation.y += 0.01;
     sun.rotation.z += 0.01;
 
-    // sphere.rotation.x += 0.01;
-    // sphere.rotation.y += 0.005;
-    // sphere.rotation.z += 0.01;
-
-    // sphere.rotation.x += 0.05;
-    // sphere.rotation.y += 0.05;
-    // sphere.rotation.z += 0.0;
-    // torus4.rotation.x +=0.05;
-    // torus2.rotation.x += 0.05;
-    // torus3.rotation.y += 0.05;
-    // cube.rotation.x += 0.05;
-    // cube.rotation.y += 0.05;
+    // star.rotation.x += 0.01;
 
     controls.update();
 
