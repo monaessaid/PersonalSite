@@ -111,7 +111,7 @@ const planetTexture2 = new THREE.TextureLoader().load('planet-texture2.jpg');
 const planetTexture3 = new THREE.TextureLoader().load('planet-texture3.jpg');
 const planetTexture4 = new THREE.TextureLoader().load('planet-texture5.jpg');
 const planetTexture5 = new THREE.TextureLoader().load('planet-texture4.jpg');
-const planetTexture6 = new THREE.TextureLoader().load('planet-texture6.jpg');
+const planetTexture6 = new THREE.TextureLoader().load('planet-texture8.jpg');
 const sunTexture = new THREE.TextureLoader().load('sun-texture.jpg');
 
 const texturedPlanet1 = new THREE.Mesh(
