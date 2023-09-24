@@ -50,10 +50,10 @@ function addStar() {
         {
             // color: 0x8affff,
             color: 0xffffff,
-            roughness: 0.0,
-            metalness: 1.0,
+            // roughness: 0.0,
+            // metalness: 1.0,
             reflectivity: 1.0,
-            clearcoat: 1.0,
+            // clearcoat: 1.0,
             // clearcoatRoughness: 0.1,
         }
     );

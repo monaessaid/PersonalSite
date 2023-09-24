@@ -10,15 +10,36 @@ main {
     font-family: monospace;
 }
 
-h1 {
+h1, h2 {
     color: white;
     font-family: 'Montserrat', sans-serif;
     /* font-family: monospace; */
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-align: center;
+    margin:5%;
+    color: #00ff11;
+    background-color: #00003b;
+    /* background-color: black; */
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: rgb(255, 170, 255);
+    text-align: justify;
+    padding: 1%;
+}
+
+#about {
+    background-color: #00003bca;
+    margin: 5%;
+    padding: 1% 2%;
+}
+
+.paragraph-title {
+    color: #00ff11;
 }
 
 p {
-    margin:5%;
-    background-color: rgba(0, 0, 59, 0.794);
+    text-align: justify;
 }
