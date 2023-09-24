@@ -13,33 +13,45 @@ main {
 h1, h2 {
     color: white;
     font-family: 'Montserrat', sans-serif;
-    /* font-family: monospace; */
+    /* font-family: 'Courier New', Courier, monospace; */
     font-size: 3rem;
     text-align: center;
     margin:5%;
+    /* color: #00ff11; */
     color: #00ff11;
-    background-color: #00003b;
+    background-color: #00002be8;
+    border-radius: 3px;
     /* background-color: black; */
 }
 
 h2 {
     font-size: 1.25rem;
     font-weight: bold;
-    color: rgb(255, 170, 255);
-    text-align: justify;
+    /* color: rgb(255, 170, 255); */
+    /* text-align: justify; */
     padding: 1%;
 }
 
+h3 {
+    border-bottom: 1px solid;
+    border-color: white;
+}
+
 #about {
-    background-color: #00003bca;
+    /* background-color: #00003bca; */
+    /* background-color: #00003be8; */
+    background-color: #00002be8;
     margin: 5%;
     padding: 1% 2%;
+    border-radius: 3px;
 }
 
 .paragraph-title {
     color: #00ff11;
+    font-size: 1.2rem;
 }
 
 p {
     text-align: justify;
+    font-size: large;
 }
