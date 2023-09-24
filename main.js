@@ -12,7 +12,9 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(10);
+camera.position.setZ(20);
+// camera.position.setX(0);
+// camera.position.setY(5);
 
 renderer.render(scene, camera);
 
@@ -172,14 +174,15 @@ texturedPlanet7.position.x = -25;
 texturedPlanet7.position.y = 30;
 texturedPlanet7.position.z = -25;
 
-scene.add(sun);
+// scene.add(sun);
 
 function animate() {
     requestAnimationFrame(animate);
 
     texturedPlanet1.rotation.y += 0.01;
 
-    texturedPlanet2.rotation.y += 0.02;
+    texturedPlanet2.rotation.x += 0.02;
+    texturedPlanet2.rotation.z += 0.02;
 
     texturedPlanet3.rotation.x += 0.01;
     texturedPlanet3.rotation.z += 0.01;
@@ -209,11 +212,17 @@ function animate() {
 
 function moveCamera() {
     const t = document.body.getBoundingClientRect().top;
-    sun.rotation.x += 0.5;
+    // sun.rotation.x += 0.5;
 
-    camera.position.z = t * -0.02;
-    camera.position.x = t * 0.01;
-    camera.position.y = t * -0.01;
+    // No planets on load, they come into view on scroll
+    // camera.position.z = t * -0.02;
+    // camera.position.x = t * 0.01;
+    // camera.position.y = t * -0.01;
+
+    // camera.position.z = t * 0.001;
+    camera.position.x = t * 0.05;
+    camera.position.y = t * 0.05;
+
 }
 
 document.body.onscroll = moveCamera;
