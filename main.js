@@ -48,13 +48,8 @@ function addStar() {
     const geometry = new THREE.SphereGeometry(a, 24, 24);
     const material = new THREE.MeshLambertMaterial(
         {
-            // color: 0x8affff,
             color: 0xffffff,
-            // roughness: 0.0,
-            // metalness: 1.0,
             reflectivity: 1.0,
-            // clearcoat: 1.0,
-            // clearcoatRoughness: 0.1,
         }
     );
 

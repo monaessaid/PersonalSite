@@ -8,17 +8,19 @@ main {
     position: absolute;
     color: white;
     font-family: monospace;
+    animation: fadeIn 3s ease-in;
 }
 
 h1, h2 {
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
     /* font-family: 'Courier New', Courier, monospace; */
+    font-family: 'Orbitron', sans-serif;
     font-size: 3rem;
     text-align: center;
     margin:5%;
     /* color: #00ff11; */
-    color: #00ff11;
+    color: #9cffa2;
     background-color: #00002be8;
     border-radius: 3px;
     /* background-color: black; */
@@ -30,6 +32,9 @@ h2 {
     /* color: rgb(255, 170, 255); */
     /* text-align: justify; */
     padding: 1%;
+    font-family: monospace;
+    text-align: justify;
+    padding: 3%;
 }
 
 h3 {
@@ -55,3 +60,24 @@ p {
     text-align: justify;
     font-size: large;
 }
+
+#bg {
+    height: 100vh;
+    width: 100vw;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* #intro-title {
+    animation: fadeIn 3s ease-in;
+} */
