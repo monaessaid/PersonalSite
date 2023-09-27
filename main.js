@@ -169,34 +169,37 @@ texturedPlanet7.position.x = -20;
 texturedPlanet7.position.y = 40;
 texturedPlanet7.position.z = -20;
 
-// scene.add(sun);
+scene.add(sun);
+sun.position.x = -50;
+sun.position.y = 40;
+sun.position.z = -50;
 
 function animate() {
     requestAnimationFrame(animate);
 
-    // texturedPlanet1.rotation.y += 0.01;
+    texturedPlanet1.rotation.y += 0.001;
 
-    // texturedPlanet2.rotation.x += 0.02;
-    // texturedPlanet2.rotation.z += 0.02;
+    texturedPlanet2.rotation.x += 0.001;
+    texturedPlanet2.rotation.z += 0.001;
 
-    // texturedPlanet3.rotation.x += 0.01;
-    // texturedPlanet3.rotation.z += 0.01;
+    texturedPlanet3.rotation.x += 0.005;
+    texturedPlanet3.rotation.z += 0.005;
 
-    // texturedPlanet4.rotation.x += 0.02;
-    // texturedPlanet4.rotation.z += 0.02;
+    texturedPlanet4.rotation.x += 0.005;
+    texturedPlanet4.rotation.z += 0.005;
 
-    // texturedPlanet5.rotation.x += 0.005;
-    // texturedPlanet5.rotation.y += 0.005;
+    texturedPlanet5.rotation.x += 0.005;
+    texturedPlanet5.rotation.y += 0.005;
 
-    // texturedPlanet6.rotation.x += 0.02;
-    // texturedPlanet6.rotation.z += 0.02;
+    texturedPlanet6.rotation.x += 0.005;
+    texturedPlanet6.rotation.z += 0.005;
 
-    // texturedPlanet7.rotation.y += 0.01;
-    // texturedPlanet7.rotation.z += 0.01;
+    texturedPlanet7.rotation.y += 0.005;
+    texturedPlanet7.rotation.z += 0.005;
 
-    // sun.rotation.x += 0.01;
-    // sun.rotation.y += 0.01;
-    // sun.rotation.z += 0.01;
+    sun.rotation.x += 0.001;
+    sun.rotation.y += 0.001;
+    sun.rotation.z += 0.001;
 
     // star.rotation.x += 0.01;
 
@@ -237,6 +240,10 @@ function moveCamera() {
 
     texturedPlanet7.rotation.y += 0.01;
     texturedPlanet7.rotation.z += 0.01;
+
+    sun.rotation.x += 0.01;
+    sun.rotation.y += 0.01;
+    sun.rotation.z += 0.01;
 
 }
 
