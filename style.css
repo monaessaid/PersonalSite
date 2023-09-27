@@ -9,7 +9,7 @@ main {
     color: white;
     /* font-family: monospace; */
     font-family:'Jura', monospace;
-    animation: fadeIn 1s ease-in;
+    /* animation: fadeIn 1s ease-in; */
 }
 
 h1, h2 {
@@ -73,7 +73,7 @@ p {
     width: 100vw;
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     0% {
         opacity: 0;
     }
@@ -83,10 +83,11 @@ p {
     100% {
         opacity: 1;
     }
-}
+} */
 
 #intro-title {
     padding: 1% 0;
+    letter-spacing: 3px;
 }
 
 a {

@@ -136,67 +136,67 @@ const sun = new THREE.Mesh(
 );
 
 scene.add(texturedPlanet1);
-texturedPlanet1.position.x = 25;
-texturedPlanet1.position.y = 25;
+texturedPlanet1.position.x = 40;
+texturedPlanet1.position.y = 40;
 
 scene.add(texturedPlanet2);
-texturedPlanet2.position.x = -25;
-texturedPlanet2.position.y = -25;
-texturedPlanet2.position.z = -25;
+texturedPlanet2.position.x = -30;
+texturedPlanet2.position.y = -30;
+texturedPlanet2.position.z = -30;
 
 scene.add(texturedPlanet3);
-texturedPlanet3.position.x = 28;
-texturedPlanet3.position.y = 28;
-texturedPlanet3.position.z = 28;
+texturedPlanet3.position.x = 45;
+texturedPlanet3.position.y = 45;
+texturedPlanet3.position.z = 45;
 
 scene.add(texturedPlanet4);
-texturedPlanet4.position.x = -10;
-texturedPlanet4.position.y = -10;
-texturedPlanet4.position.z = -10;
+texturedPlanet4.position.x = -20;
+texturedPlanet4.position.y = -20;
+texturedPlanet4.position.z = -20;
 
 scene.add(texturedPlanet5);
-texturedPlanet5.position.x = -5;
+texturedPlanet5.position.x = -40;
 texturedPlanet5.position.y = 15;
-texturedPlanet5.position.z = -5;
+texturedPlanet5.position.z = -40;
 
 scene.add(texturedPlanet6);
-texturedPlanet6.position.x = -10;
+texturedPlanet6.position.x = -5;
 texturedPlanet6.position.y = 28;
-texturedPlanet6.position.z = -10;
+texturedPlanet6.position.z = -5;
 
 scene.add(texturedPlanet7);
-texturedPlanet7.position.x = -25;
-texturedPlanet7.position.y = 30;
-texturedPlanet7.position.z = -25;
+texturedPlanet7.position.x = -20;
+texturedPlanet7.position.y = 40;
+texturedPlanet7.position.z = -20;
 
 // scene.add(sun);
 
 function animate() {
     requestAnimationFrame(animate);
 
-    texturedPlanet1.rotation.y += 0.01;
+    // texturedPlanet1.rotation.y += 0.01;
 
-    texturedPlanet2.rotation.x += 0.02;
-    texturedPlanet2.rotation.z += 0.02;
+    // texturedPlanet2.rotation.x += 0.02;
+    // texturedPlanet2.rotation.z += 0.02;
 
-    texturedPlanet3.rotation.x += 0.01;
-    texturedPlanet3.rotation.z += 0.01;
+    // texturedPlanet3.rotation.x += 0.01;
+    // texturedPlanet3.rotation.z += 0.01;
 
-    texturedPlanet4.rotation.x += 0.02;
-    texturedPlanet4.rotation.z += 0.02;
+    // texturedPlanet4.rotation.x += 0.02;
+    // texturedPlanet4.rotation.z += 0.02;
 
-    texturedPlanet5.rotation.x += 0.005;
-    texturedPlanet5.rotation.y += 0.005;
+    // texturedPlanet5.rotation.x += 0.005;
+    // texturedPlanet5.rotation.y += 0.005;
 
-    texturedPlanet6.rotation.x += 0.02;
-    texturedPlanet6.rotation.z += 0.02;
+    // texturedPlanet6.rotation.x += 0.02;
+    // texturedPlanet6.rotation.z += 0.02;
 
-    texturedPlanet7.rotation.y += 0.01;
-    texturedPlanet7.rotation.z += 0.01;
+    // texturedPlanet7.rotation.y += 0.01;
+    // texturedPlanet7.rotation.z += 0.01;
 
-    sun.rotation.x += 0.01;
-    sun.rotation.y += 0.01;
-    sun.rotation.z += 0.01;
+    // sun.rotation.x += 0.01;
+    // sun.rotation.y += 0.01;
+    // sun.rotation.z += 0.01;
 
     // star.rotation.x += 0.01;
 
@@ -217,6 +217,26 @@ function moveCamera() {
     // camera.position.z = t * 0.001;
     camera.position.x = t * 0.05;
     camera.position.y = t * 0.05;
+
+    texturedPlanet1.rotation.y += 0.01;
+
+    texturedPlanet2.rotation.x += 0.02;
+    texturedPlanet2.rotation.z += 0.02;
+
+    texturedPlanet3.rotation.x += 0.01;
+    texturedPlanet3.rotation.z += 0.01;
+
+    texturedPlanet4.rotation.x += 0.02;
+    texturedPlanet4.rotation.z += 0.02;
+
+    texturedPlanet5.rotation.x += 0.005;
+    texturedPlanet5.rotation.y += 0.005;
+
+    texturedPlanet6.rotation.x += 0.02;
+    texturedPlanet6.rotation.z += 0.02;
+
+    texturedPlanet7.rotation.y += 0.01;
+    texturedPlanet7.rotation.z += 0.01;
 
 }
 
